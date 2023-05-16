@@ -13,7 +13,7 @@ import { ProfileImage } from "./ProfileImage";
 function updateTextAreaSize(textArea: HTMLTextAreaElement) {
   if (textArea == null) return;
   textArea.style.height = "0px";
-  textArea.style.height = textArea.scrollHeight + "px";
+  textArea.style.height = `${textArea.scrollHeight}px`;
 }
 
 export function NewTweetForm() {
