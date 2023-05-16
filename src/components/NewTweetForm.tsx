@@ -37,7 +37,7 @@ function Form() {
   const trpcUtils = api.useContext();
 
   useLayoutEffect(() => {
-    updateTextAreaSize(textAreaRef.current);
+    updateTextAreaSize(textAreaRef.current!);
   }, [inputValue]);
 
   const createTweet = api.tweet.create.useMutation({
