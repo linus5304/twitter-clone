@@ -1,11 +1,11 @@
-import Link from "next/link";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { ProfileImage } from "./ProfileImage";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { VscHeart, VscHeartFilled } from "react-icons/vsc";
-import { IconHoverEffect } from "./IconHoverEffect";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { api } from "../utils/api";
+import { IconHoverEffect } from "./IconHoverEffect";
 import { LoadingSpinner } from "./LoadingSpinner";
+import { ProfileImage } from "./ProfileImage";
 
 type Tweet = {
   id: string;
@@ -36,7 +36,7 @@ export function InfiniteTweetList({
 
   if (tweets == null || tweets.length === 0) {
     return (
-      <h2 className="my-4 text-center text-2xl text-gray-500">No tweets</h2>
+      <h2 className="my-4 text-center text-2xl text-gray-500">No </h2>
     );
   }
   return (
@@ -69,7 +69,7 @@ function TweetCard({
 }: Tweet) {
   const trpcUtils = api.useContext();
   const toggleLike = api.tweet.toggleLike.useMutation({
-    onSuccess: async ({ addedLike }) => {
+    onSuccess: ({ addedLike }) => {
       const updateData: Parameters<
         typeof trpcUtils.tweet.infiniteFeed.setInfiniteData
       >[1] = (oldData) => {
