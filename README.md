@@ -1,5 +1,6 @@
-# Title
+# Twitter clone
 # Description
+This is a twitter clone app build with Next.js and the t3stack. Experience another level of building your next.js apps 
 # Why? (Motivation/Goal/Problem to solve)
 # Quick start
 # Usage
